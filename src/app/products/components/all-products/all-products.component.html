@@ -1,0 +1,29 @@
+<div class="row all">
+    <div class="row">
+        <label for="" class="my-1">Categories :</label>
+        <select class="form-control" style="width: 18rem;"(change)="FilterProduct($event)">
+            <option value="all" selected>All</option>
+            <option value="{{cat}}" *ngFor="let cat of categories">{{cat}}</option>
+        </select>
+    </div>
+    <div class="row d-flex flex-wrap">  <!-- Add d-flex and flex-wrap classes -->
+        <div class="col-4" *ngFor="let product of products">
+            <div class="card" style="width: 18rem;">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <div class="row">
+                        <div class="col-8">
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                        <div class="col">
+                            <span class="badge text-bg-warning">{{product.price| currency}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

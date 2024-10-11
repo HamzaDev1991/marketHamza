@@ -1,0 +1,48 @@
+.all {
+    margin-top: 20px;
+}
+
+.row.d-flex {
+    display: flex; /* Make the row a flex container */
+    flex-wrap: wrap; /* Allow wrapping of items */
+}
+
+.card {
+    flex: 1 0 18rem; /* Allow cards to grow and shrink while maintaining minimum width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for size and shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-top: 20px !important; /* Add margin between cards vertically */
+    margin-bottom: 20px; /* Add margin between cards vertically */
+    height: 100%; /* Make sure the card takes up the full height */
+    display: flex;
+    flex-direction: column; /* Stack card content vertically */
+}
+
+/* Increase size and change shadow on hover */
+.card:hover {
+    transform: scale(1.05); /* Increase size to 105% */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+.card-body {
+    flex-grow: 1; /* Allow card body to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    flex-grow: 1; /* Force the card text to take up the remaining space */
+    overflow: hidden; /* Hide overflow if the text is too long */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowed text */
+    height: 80px; /* Set a fixed height for the text block */
+}
+
+img {
+    width: 100%;
+    height: 200px; /* Ensure all images have the same height */
+    padding: 10px;
+}
+.col-4 {
+    margin-bottom: 20px; /* Add margin between cards vertically */
+}
+

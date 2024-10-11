@@ -1,0 +1,34 @@
+.container-fluid {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the left and right */
+    align-items: center; /* Centers items vertically */
+}
+
+.right-links {
+    display: flex;
+    gap: 10px; /* Optional: Adds some spacing between the right-aligned links */
+}
+.color-nav {
+    background-color: rgb(137, 88, 150) !important; /* Set the background color to red */
+    
+}
+.navbar .navbar-brand {
+    color: rgb(240, 234, 234); /* Default color */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Change color on hover */
+.navbar .navbar-brand:hover {
+    color: red; 
+    scale: 1;/* Color when hovered */
+}
+
+/* Change color when the route is active */
+.navbar .navbar-brand.active {
+    color: rgb(255, 35, 255) !important; /* Ensure the active link is green */
+}
+
+/* Change color when the link is clicked (active state) */
+.navbar .navbar-brand:active {
+    color: blue; /* Color when clicked */
+}
