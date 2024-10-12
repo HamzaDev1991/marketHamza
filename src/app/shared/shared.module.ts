@@ -6,21 +6,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsModule } from '../products/products.module';
-import { SelectComponent } from './select/select.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SelectComponent
+
   ],
   imports: [
     CommonModule,
     RouterModule,
     BrowserModule,
     HttpClientModule,
-    ProductsModule
+    ProductsModule,
+    FormsModule
  
     
   ],

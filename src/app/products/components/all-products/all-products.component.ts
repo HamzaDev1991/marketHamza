@@ -11,9 +11,9 @@ import { product, Rating } from 'src/app/viewModels/product';
   styleUrls: ['./all-products.component.css']
 })
 export class AllProductsComponent implements OnInit {
-products:product[]=[]
+products:any[]=[]
 categories:string[]=[]
-
+cartProduct:product[]=[]
 constructor(private services:ProductService,private toastr: ToastrService,private spinner: NgxSpinnerService)
 {
 
@@ -46,8 +46,9 @@ getCategories()
   this.spinner.show();
   return this.services.getAllCategories().subscribe((res:any)=>
     {
+      
      this.categories=res;
-     setTimeout(() => {
+      setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 500);
@@ -88,6 +89,31 @@ filterProductByCategoryName(categoryName:string)
       this.toastr.error(err.error);
       }
     )
+
+}
+
+AddToCart(event:any)
+{
+ if("cart" in localStorage)
+  {
+   this.cartProduct=JSON.parse(localStorage.getItem("cart")!)
+   let existOroduct=this.cartProduct.find((products:any)=>(products.product.id==event.product.id) && products.quantity>=1)
+    
+   if(existOroduct)
+   {
+    this.toastr.error("this item is already exist");
+   }else
+   {
+    this.cartProduct.push(event)
+    localStorage.setItem("cart",JSON.stringify(this.cartProduct));
+   }
+
+  }else
+  {
+    this.cartProduct.push(event)
+    localStorage.setItem("cart",JSON.stringify(this.cartProduct));
+
+  }
 
 }
 }

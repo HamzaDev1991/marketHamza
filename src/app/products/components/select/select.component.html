@@ -1,0 +1,5 @@
+<label for="" class="my-1">Categories :</label>
+<select class="form-control" style="width: 18rem;"(change)="FilterProduct($event)">
+    <option value="all" selected>All</option>
+    <option value="{{cat}}" *ngFor="let cat of categories1">{{cat}}</option>
+</select>

@@ -27,4 +27,12 @@ export class ProductService {
     return this.http.get(environment.baseUrl+'products/category/'+categoryName)
 
   }
+
+  //products/1
+
+  getProductsById(id:number)
+  {
+    return this.http.get(environment.baseUrl+'products/'+id)
+
+  }
 }
